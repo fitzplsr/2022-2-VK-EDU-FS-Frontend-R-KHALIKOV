@@ -1,0 +1,101 @@
+.chats-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80%;
+}
+
+#burger {
+    flex-basis: 10%;
+    font-size: 4vh;
+    color: aliceblue;
+    margin-left: 4%;
+}
+
+.title {
+    flex-basis: 85%;
+    font-size: 4vh;
+    color: aliceblue;
+    margin-left: 3%;
+}
+
+.chats-head > #search_icon {
+    justify-self: flex-end;
+    flex-basis: 5%;
+    margin-right: 2%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 2%;
+    right: 3%;
+    background-color: rgb(255, 202, 44);
+    color: rgb(116, 96, 41);
+    width: 6vh;
+    height: 6vh;
+    border-radius: 100%;
+    padding: 16px;
+}
+
+#create-icon {
+    font-size: 4vh;
+}
+
+.chats-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview {
+    display: flex;
+    flex-direction: row;
+    height: 8vh;
+    font-size: 3vh;
+    background-color: white;
+    border: 0;
+    padding: 0;
+}
+
+#avatar {
+    font-size: 7vh;
+    align-self: center;
+    flex-basis: 20%;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: stretch;
+    flex-basis: 65%;
+    border-bottom: 0.1vh solid grey;
+    margin-top: 1%;
+}
+
+.chat-last-msg {
+    font-size: 2.5vh;
+    color: grey;
+}
+
+.chat-nums {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    border-bottom: 0.1vh solid grey;
+    flex-basis: 15%;
+    font-size: 2vh;
+}
+
+.unread-msgs {
+    font-size: 2.5vh;
+}
+
+#msgs {
+    font-size: 2.5vh;
+    color: rgb(142, 36, 170);
+}

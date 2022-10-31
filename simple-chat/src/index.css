@@ -1,8 +1,29 @@
+html {
+    display: block;
+    border: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 body {
+    border: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+#menu {
+    display: flex;
+}
+
+#dialog {
+    display: none;
 }
 
 .screen {
@@ -10,42 +31,17 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
-    background-color: rgb(218, 185, 238);
-    height: 1700px;
-    width: 950px; 
-}
-
-.input-box {
-    display: flex;
-    height: 60px;
-    margin-bottom: 0;
     width: 100%;
-    height: auto;
-    min-height: 5%;
-    background-color: white; 
+    height: 100%;
 }
 
 .top-box {
     display: flex;
-    height: 12%;
+    height: 10%;
     width: 100%;
-    font-size: 50px;
     background-color: rgb(142, 36, 170);
     flex-direction: column;
-    justify-content: space-between;
-}
-
-.form {
-    display: flex;
-    flex-direction: row;
-    width: 100%;  
-}
-
-.form-input {
-    font-size: 50px;
-    width: 85%;
-    margin-left: 3%;
-    border: 0;
+    justify-content: flex-start;
 }
 
 .status-bar {
@@ -53,146 +49,26 @@ body {
     justify-content: flex-end;
     height: 20%;
     color: aliceblue;
-    margin-right: 1%;
+    margin-right: 0.5%;
 }
 
+
 #connection_icon {
-    flex-basis: 5%;
-    font-size: 35px;
+    flex-basis: 3%;
+    font-size: 2vh;
     margin-top: 0.5%;
 }
 
 #wifi_icon {
-    flex-basis: 5%;
-    font-size: 35px;
+    flex-basis: 3%;
+    font-size: 2vh;
     margin-top: 0.5%;
+    margin-left: 0.5%;
 }
 
 #battery_icon {
-    flex-basis: 5%;
-    font-size: 45px;
-    transform: rotate(90deg);
-    margin-top: 0.6%;
-}
-
- .user-line {
-    display: flex;
-    align-items: center;
-    height: 80%;
- }
-
- #arrow_icon {
-    flex-basis: 15%;
-    font-size: 70px;
-    color: aliceblue;
-    margin-left: 4%;
- }
-
- #account_icon {
-    flex-basis: 15%;
-    font-size: 120px;
-    color: aliceblue;
- }
-
-.user {
-    flex-basis: 60%;
-    margin-left: 4%;
-}
-
-.username {
-    font-size: 60px;
-    color: aliceblue;
-}
-
-.status {
-    font-size: 30px;
-    color: rgb(169, 150, 177);
-    margin-top: 1%;
-}
-
-#search_icon{
-    flex-basis: 13%;
-    font-size: 70px;
-    color: aliceblue;
-}
-
-#menu_icon {
-    flex-basis: 13%;
-    font-size: 70px;
-    color: aliceblue;
-}
-
-#attachment_icon {
-    font-size: 70px;
-    transform: rotate(-45deg);
-    padding-left: 1.5%;
-    padding-top: 1.5%;
-    color: rgb(143, 135, 146);
-}
-
-.chat {
-    display: flex;
-    flex-direction: column;
-    height: 83%;
-    font-size: 50px;
-    overflow-y: auto;
-}
-
-.messageFromUser2 {
-    display: flex;
-    background-color: aliceblue;
-    flex-direction: row-reverse;
-    align-self: flex-end;
-    width: auto;
-    max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    word-wrap: break-word;
-}
-
-.messageFromUser2 > .time { 
-    margin-right: 10px;
-    margin-bottom: -10px;
-    margin-left: 5px;
-}
-
-.messageFromUser1 {
-    display: flex;
-    background-color: aliceblue;
-    flex-direction: row-reverse;
-    align-self: flex-start;
-    width: auto;
-    max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
-
-.messageFromUser1 > .time { 
-    padding-right: 20px;
-    padding-bottom: 5px;
-}
-
-.text {
-    max-width:525px;
-    align-self: flex-start;
-    text-justify: center;
-    padding-right: 20px;
-    padding-left: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.time {
-    align-self: flex-end;
-    justify-self: flex-start;
-    font-size: 30px;
-    padding-bottom: 10px;
+    flex-basis: 3%;
+    margin-left: .5%;
+    font-size: 2vh;
+    margin-top: 0.5%;
 }

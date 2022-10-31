@@ -1,0 +1,172 @@
+.input-box {
+    display: flex;
+    height: 5%;
+    width: 100%;
+    background-color: white; 
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;  
+    height: 100%;
+}
+
+.form-input {
+    font-size: 3vh; 
+    width: 85%;
+    height: 100%;
+    margin-left: 3%;
+    border: 0;
+}
+
+.user-line {
+    display: flex;
+    align-items: center;
+    height: 80%;
+ }
+
+ .back {
+    background-color: rgb(142, 36, 170);
+    border: 0;
+ }
+
+ #arrow_icon {
+    flex-basis: 20%;
+    font-size: 4vh;
+    color: aliceblue;
+    margin-left: 1%;
+ }
+
+ #account_icon {
+    flex-basis: 3%;
+    font-size: 7.5vh;
+    color: aliceblue;
+ }
+
+.user {
+    flex-basis: 70%;
+    margin-left: 1%;
+}
+
+.username {
+    font-size: 4vh;
+    color: aliceblue;
+}
+
+.status {
+    font-size: 2vh;
+    color: rgb(169, 150, 177);
+}
+
+#search_icon{
+    flex-basis: 13%;
+    font-size: 4vh;
+    color: aliceblue;
+}
+
+#menu_icon {
+    flex-basis: 5%;
+    margin-right: 3%;
+    font-size: 4vh;
+    color: aliceblue;
+}
+
+#attachment_icon {
+    font-size: 4vh;
+    margin-right: 1.5%;
+    transform: rotate(-90deg);
+    color: rgb(143, 135, 146);
+}
+
+.chat {
+    height: 85%;
+}
+
+.chat-show {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 3vh;
+    overflow-y: auto;
+    background-color: rgb(218, 185, 238);
+}
+
+.messageFromUser2 {
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: column-reverse;
+    align-self: flex-end;
+    width: auto;
+    max-width: 70%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    word-wrap: break-word;
+}
+
+.messageFromUser2 > .time { 
+    margin-right: 10px;
+    margin-bottom: -10px;
+    margin-left: 5px;
+    padding-left: 25px;
+}
+
+.messageFromUser2 > .name {
+    font-size: 2vh;
+    align-self: flex-end;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: -20px;
+}
+
+.messageFromUser1 {
+    display: flex;
+    background-color: aliceblue;
+    flex-direction: column-reverse;
+    align-self: flex-start;
+    width: auto;
+    max-width: 70%;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.messageFromUser1 > .time { 
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+
+.messageFromUser1 > .name {
+    font-size: 2vh;
+    align-self: flex-start;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: -20px;
+}
+
+.text {
+    max-width: 60vw;
+    align-self: flex-start;
+    text-justify: center;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: -2%;
+}
+
+.time {
+    align-self: flex-end;
+    justify-self: flex-start;
+    font-size: 2vh;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
