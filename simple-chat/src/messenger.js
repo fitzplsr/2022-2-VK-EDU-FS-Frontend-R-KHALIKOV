@@ -1,67 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, heigth=device-height, user-scalable=no">
-        <title>Messenger</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    <body>
-        <div class="screen" id="menu">
-            <div class="top-box">
-                <div class="status-bar">
-                    <i class="material-icons" id="connection_icon">signal_cellular_alt</i>&nbsp;
-                    <i class="material-icons" id="wifi_icon">wifi</i>&nbsp;
-                    <i class="material-icons" id="battery_icon">battery_3_bar</i>
-                </div>
-                <div class="chats-head">
-                    <i class="material-icons" id="burger">menu</i>&nbsp;
-                    <div class="title">Messenger</div>&nbsp;
-                    <i class="material-icons" id="search_icon">search</i>
-                </div>
-            </div>
-            <div class="chats-list">
-                <div class="previews">
-                    <div id="start-preview"></div>
-                </div>
-                <div id="start-chat-preview"></div>
-            </div>
-            <div class="button">
-                <i class="material-icons" id="create-icon">create</i>
-            </div>
-        </div>
-        <div class="screen" id="dialog">
-            <div class="top-box">
-                <div class="status-bar">
-                    <i class="material-icons"  id="connection_icon">signal_cellular_alt</i>&nbsp;
-                    <i class="material-icons" id="wifi_icon">wifi</i>&nbsp;
-                    <i class="material-icons" id="battery_icon">battery_3_bar</i>
-                </div>
-                <div class="user-line">
-                    <button class="back" onclick="viewChats()">
-                        <i class="material-icons" id="arrow_icon">arrow_back</i>
-                    </button>
-                    <i class="material-icons" id="account_icon">account_circle</i>
-                    <div id="start-dialog"></div>
-                    <i class="material-icons" id="search_icon">search</i>
-                    <i class="material-icons" id="menu_icon">more_vert</i>
-                </div>
-            </div>
-            <div class="chat">
-                <div class="chat-show">
-                    <div id="start"></div>
-                </div>
-                <div id="start-chat"></div>
-            </div>
-            <div class="input-box">
-                <form class="form" action="/">
-                    <input class="form-input" name="message-text" placeholder="Cообщение" type="text" autocomplete="off" >
-                    <i class="material-icons" id="attachment_icon">attachment</i>
-                </form>
-            </div>
-        </div>
-        <script>
-            var current_chat_id = localStorage.getItem("current_chat")
+var current_chat_id = localStorage.getItem("current_chat")
             if (!current_chat_id) {
                 localStorage.setItem("current_chat", "0")
             }
@@ -69,22 +6,14 @@
             var which_page = localStorage.getItem("page")
             var is_chat = localStorage.getItem("chats")
             if (!which_page || !is_chat) {
-                localStorage.setItem("menu", "1")
-                localStorage.setItem("dialog", "0")
                 localStorage.setItem("page", "menu")
-                viewChats()
-                
+                firstViewChats()
             }
             else {
                 if (which_page === "menu") {
-                    localStorage.setItem("menu", "1")
-                    localStorage.setItem("dialog", "0")
-                    viewChats()
-                    
+                    firstViewChats()
                 }
                 else {
-                    localStorage.setItem("menu", "0")
-                    localStorage.setItem("dialog", "1")
                     let chat = document.querySelector(".chat")
                     chat.removeChild(document.querySelector('.chat-show'))
                     let chat_show = document.createElement('div')
@@ -96,33 +25,11 @@
                     let link2 = sp2.parentNode;
                     link2.insertBefore(chat_show, sp2);
                     viewDialog(current_chat_id)
+                    firstViewChats()
                 }
             } 
 
-            // function firstViewChats() {
-            //     let chatsInfo = localStorage.getItem("chats")
-            //     if (chatsInfo) {
-            //         const dicts = JSON.parse(chatsInfo);
-            //             for(const dict in dicts) {
-            //                 post_preview(dicts[dict]["info"])
-            //             }
-            //     }
-            //     else {
-            //         const dict = {"chat0":{"info":{"chat_id":"0", "chat_last_msg":"Hi, men", "unread-msgs": '1', "chat-time":"21:54", "user_name":"Boss"},
-            //                     "messages":{"message0":{"id":"0", "user_id":"1", "name":"Boss", "text":"Hi, men", "time":"21:54"}}},
-            //                     "chat1":{"info":{"chat_id":"1", "chat_last_msg":"Best wishes", "unread-msgs": '0', "chat-time":"21:50", "user_name":"Bob"},
-            //                     "messages":{"message0":{"id":"0", "user_id":"2", "name":"Bob", "text":"Where is my money", "time":"21:50"},
-            //                     "message1":{"id":"1", "user_id":"0", "name":"Me", "text":"Best wishes", "time":"21:51"}}}}
-            //         for (let chat in dict) {
-            //             post_preview(dict[chat]["info"]);
-            //         }
-            //         localStorage.setItem("chats", JSON.stringify(dict));
-            //         localStorage.setItem("counter_chats", "0");
-            //     }
-            // }
-
-            function viewChats(){
-                localStorage.setItem("menu", "1")
+            function firstViewChats() {
                 let chatsInfo = localStorage.getItem("chats")
                 if (chatsInfo) {
                     const dicts = JSON.parse(chatsInfo);
@@ -142,22 +49,17 @@
                     localStorage.setItem("chats", JSON.stringify(dict));
                     localStorage.setItem("counter_chats", "0");
                 }
+            }
 
+            function viewChats(){
                 localStorage.setItem("page", "menu")
                 localStorage.setItem("counter", "0")
 
                 document.getElementById('dialog').style.display = "none";
                 document.getElementById('menu').style.display = "flex";
-                if (localStorage.getItem("dialog")==="1"){
-                    del_dialog()
-                }
-                
-            }
-            function del_dialog() {
-                
                 let chat = document.querySelector(".chat")
                 chat.removeChild(document.querySelector('.chat-show'))
-                let userline = document.querySelector(".user-line")
+                let userline = document.querySelector('.user-line')
                 userline.removeChild(document.querySelector(".user"))
                 let chat_show = document.createElement('div')
                 chat_show.className = 'chat-show'
@@ -170,6 +72,7 @@
             }
 
             function post_preview(info) {
+                console.log(info)
                 const preview_box = document.createElement('button')
                 preview_box.setAttribute('class', 'preview');
                 preview_box.setAttribute('onclick', 'viewDialog('+ info["chat_id"] + ")")
@@ -217,7 +120,7 @@
                 preview_box.appendChild(chat_info)
                 preview_box.appendChild(chat_nums)
 
-                var sp2 = document.getElementById('start-preview');
+                var sp2 = document.getElementById('start-chat-preview');
                 var link2 = sp2.parentNode;
                 link2.insertBefore(preview_box, sp2);
                 }
@@ -226,24 +129,6 @@
             const input = document.querySelector('.form-input');
 
             function viewDialog(chat_id) {
-                let dict = JSON.parse(localStorage.getItem("chats"))
-                dict["chat"+ chat_id]["info"]["unread-msgs"] = "0"
-                dictJSON = JSON.stringify(dict)
-                localStorage.setItem("chats", dictJSON)
-
-                localStorage.setItem("dialog", "1")
-                let chat = document.querySelector(".chats-list")
-                chat.removeChild(document.querySelector('.previews'))
-                let previews = document.createElement('div')
-                previews.className = 'previews'
-                let start = document.createElement('div')
-                start.setAttribute('id', 'start-preview')
-                previews.appendChild(start)
-                let sp3 = document.getElementById('start-chat-preview');
-                let link1 = sp3.parentNode;
-                link1.insertBefore(previews, sp3);
-
-
                 localStorage.setItem("page", "dialog")
                 current_chat_id = chat_id
                 localStorage.setItem("current_chat", chat_id)
@@ -277,10 +162,8 @@
                 console.log(dicts["chat" + chat_id]["messages"])
                 for(const dict in dicts["chat" + chat_id]["messages"]) {
                     post(dicts["chat" + chat_id]["messages"][dict])
-                    
                     counter += 1
                 }
-                // document.querySelector(".chat").scrollIntoView({block:"end", inline:"nearest"});
                 localStorage.setItem("counter", String(counter))
             }
 
@@ -315,10 +198,7 @@
                 let sp2 = document.getElementById('start');
                 let link2 = sp2.parentNode;
                 link2.insertBefore(chat_window, sp2);
-                chat_window.scrollIntoView({block:"end", inline:"nearest"});
-                // setTimeout(scrollIntoView, 10, {block:"start"})
-                // let a =document.querySelector(".chat")
-                // a.scrollIntoView({block:"start", inline:"nearest"});
+                chat_window.scrollIntoView();
             }
 
             function handleSubmit(event) {
@@ -338,9 +218,6 @@
                 messageInfo["time"] = now.toLocaleTimeString("ru-Ru").substring(0,5);
 
                 current_chat_id = localStorage.getItem("current_chat")
-                dict["chat" + current_chat_id]['info']['chat_last_msg'] = inputMessage
-                dict["chat" + current_chat_id]['info']['unread-msgs'] = "0"
-                dict["chat" + current_chat_id]['info']['chat-time'] = messageInfo["time"]
                 dict["chat" + current_chat_id]['messages']['message'+count] = messageInfo
                 dictJSON = JSON.stringify(dict)
                 localStorage.setItem("chats", dictJSON);
@@ -354,8 +231,3 @@
                     form.dispatchEvent(new Event('submit'));
                 }
             }
-        </script>
-    </body>
-</html> 
-
- 
