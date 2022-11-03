@@ -20,16 +20,19 @@ body {
 
 #menu {
     display: flex;
+    justify-content: flex-start;
 }
 
 #dialog {
     display: none;
+    justify-content: space-between;
 }
 
 .screen {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
@@ -77,6 +80,7 @@ body {
     height: 5%;
     width: 100%;
     background-color: white; 
+    
 }
 
 .form {
@@ -85,6 +89,7 @@ body {
     flex-direction: row;
     width: 100%;  
     height: 100%;
+    
 }
 
 .form-input {
@@ -104,6 +109,10 @@ body {
  .back {
     background-color: rgb(142, 36, 170);
     border: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
  }
 
  #arrow_icon {
@@ -111,6 +120,12 @@ body {
     font-size: 4vh;
     color: aliceblue;
     margin-left: 1%;
+ }
+
+ .back:hover,  .back:active {
+    background-color: rgb(145, 70, 165);
+    border-radius: 100%;
+    animation: pulse-animation 2s infinite
  }
 
  #account_icon {
@@ -156,6 +171,9 @@ body {
 
 .chat {
     height: 85%;
+    /* background-color: rgb(218, 185, 238); */
+    /* border-bottom: 0.1vh solid black; */
+    
 }
 
 .chat-show {
@@ -164,7 +182,8 @@ body {
     height: 100%;
     font-size: 3vh;
     overflow-y: auto;
-    background-color: rgb(218, 185, 238);
+    
+    /* background-color: rgb(218, 185, 238); */
 }
 
 .messageFromUser2 {
@@ -174,75 +193,129 @@ body {
     align-self: flex-end;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 20px;
+    border-top-left-radius: 2.5vh;
+    border-bottom-left-radius: 2.5vh;
+    border-top-right-radius: 2.5vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    margin-right: 1vh;
     word-wrap: break-word;
+    background-color: rgb(218, 185, 238)
 }
 
 .messageFromUser2 > .time { 
-    margin-right: 10px;
-    margin-bottom: -10px;
-    margin-left: 5px;
-    padding-left: 25px;
+    margin-right: 1vh;
+    margin-bottom: -0.5vh;
+    margin-left: 0.25vh;
+    padding-left: 1.25vh;
 }
 
 .messageFromUser2 > .name {
     font-size: 2vh;
     align-self: flex-end;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-bottom: -20px;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    margin-bottom: -1vh;
 }
 
 .messageFromUser1 {
+    background-color:  rgb(168, 215, 228);
     display: flex;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     flex-direction: column-reverse;
     align-self: flex-start;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    border-top-left-radius: 2.5vh;
+    border-bottom-right-radius: 2.5vh;
+    border-top-right-radius: 2.5vh;
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+    margin-left: 1vh;
+    /* animation: slidemesg1 400ms linear 0s; */
 }
 
+@keyframes slidemesg11 {
+    from {
+        margin-left: 150%;
+        word-wrap: unset;
+        font-size: 0; 
+    }
+
+    to {
+        margin-left: 20px;
+    }
+    50% {
+        font-size: 0; 
+    }
+}
+
+@keyframes slidemesg2 {
+    from {
+        /* margin-right: 150%; */
+        opacity: 0;
+        font-size: 10vh;
+        margin-right: 50%;
+       }
+}
+@keyframes slidemesg1 {
+    from {
+        /* margin-right: 150%; */
+        opacity: 0;
+        font-size: 10vh;
+        margin-left: 50%;
+       }
+    }
 .messageFromUser1 > .time { 
-    padding-right: 20px;
-    padding-bottom: 5px;
+    padding-right: 1vh;
+    padding-bottom: 0.25vh;
+    /* animation: slidemesg1 400ms linear 0s; */
 }
 
 .messageFromUser1 > .name {
     font-size: 2vh;
     align-self: flex-start;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-bottom: -20px;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    margin-bottom: -1vh;
+    /* animation: slidemesg1 400ms linear 0s; */
 }
+/* .messageFromUser2:last-child, .messageFromUser2 > .name:last-child, .messageFromUser2 > .time:last-child {
+    animation: slidemesg2 40000ms linear 0s;
+} */
+/* .messageFromUser1:last-child, .messageFromUser1 > .name:last-child, .messageFromUser1 > .time:last-child {
+    animation: slidemesg1 400ms linear 0s;
+} */ 
+
+.messageFromUser1, .messageFromUser1 > .name, .messageFromUser1 > .time {
+    animation: slidemesg1 200ms linear 0s;
+}
+/* .messageFromUser2, .messageFromUser2 > .name, .messageFromUser2 > .time {
+    animation: slidemesg2 4000ms linear 0s;
+} */
+.messageFromUser2 {
+    animation: slidemesg2 200ms linear 0s;
+} 
 
 .text {
     max-width: 60vw;
     align-self: flex-start;
     text-justify: center;
-    padding-right: 40px;
-    padding-left: 40px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    padding-top: 1.25vh;
+    padding-bottom: 0,75vh;
     margin-bottom: -2%;
+    
 }
 
 .time {
     align-self: flex-end;
     justify-self: flex-start;
     font-size: 2vh;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    padding-top: 0.5vh;
+    padding-bottom: 1vh;
+    
 }
 .chats-head {
     display: flex;
@@ -283,14 +356,36 @@ body {
     width: 6vh;
     height: 6vh;
     border-radius: 100%;
-    padding: 16px;
+    padding: 0.5vh;
+
 }
 
 #create-icon {
     font-size: 4vh;
+    animation: rot 5s linear 0s infinite;
 }
 
-.chats-list {
+.button:hover {
+    animation: pulse-animation 2s infinite
+}
+
+/* .pulse {
+    animation: pulse-animation 2s infinite;
+  } */
+  
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 2vh rgba(0, 0, 0, 0);
+    }
+  }
+
+/* .chats-list {
+    
+} */
+.previews {
     display: flex;
     flex-direction: column;
 }
@@ -303,12 +398,72 @@ body {
     background-color: white;
     border: 0;
     padding: 0;
+    margin: 0;
+    animation: slidein 500ms;
+    /* animation-delay: 10ms; */
+    overflow: hidden;
+}   
+
+.preview:active, .preview:hover {
+    background-color: rgb(218, 185, 238);
+    border: 0.5vh solid rgb(142, 36, 170);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 100%;
+        margin-left: 100%;
+        /* width: 300%; */
+        /* height: 300%; */
+    }
+
+    to {
+        margin-rigth: 0;
+        /* width: 100%; */
+        /* height: 100%; */
+    }
 }
 
 #avatar {
     font-size: 7vh;
     align-self: center;
     flex-basis: 20%;
+    animation-name: fall, rot;
+    animation-duration: 600ms,300ms;
+    animation-delay: 100ms,500ms;
+    /* animation-name: rot;
+    animation-duration: 8000ms;
+    animation-delay: 500ms; */
+    /* animation: rot 50s linear 0s infinite; */
+}
+
+#avatar:hover {
+    /* animation: rot 2s linear 0s infinite; */
+    color: gold;
+}
+@keyframes fall {
+    from {
+        margin-bottom: 500%;
+    }
+
+    to {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 .chat-info {
@@ -319,12 +474,20 @@ body {
     align-self: stretch;
     flex-basis: 65%;
     border-bottom: 0.1vh solid grey;
-    margin-top: 1%;
+    /* margin-top: 1%; */
+    overflow: hidden;
+    justify-content: center;
 }
 
 .chat-last-msg {
     font-size: 2.5vh;
     color: grey;
+    /* width:10%; */
+    /* margin-bottom: 10vh; */
+    text-overflow: ellipsis;
+    max-width: 65vw;
+    overflow: hidden;
+    /* white-space: inherit; */
 }
 
 .chat-nums {
