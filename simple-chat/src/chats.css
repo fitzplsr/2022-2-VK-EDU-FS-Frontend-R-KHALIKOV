@@ -37,36 +37,14 @@
     width: 6vh;
     height: 6vh;
     border-radius: 100%;
-    padding: 0.5vh;
-
+    padding: 16px;
 }
 
 #create-icon {
     font-size: 4vh;
-    animation: rot 5s linear 0s infinite;
 }
 
-.button:hover {
-    animation: pulse-animation 2s infinite
-}
-
-/* .pulse {
-    animation: pulse-animation 2s infinite;
-  } */
-  
-  @keyframes pulse-animation {
-    0% {
-      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 0 2vh rgba(0, 0, 0, 0);
-    }
-  }
-
-/* .chats-list {
-    
-} */
-.previews {
+.chats-list {
     display: flex;
     flex-direction: column;
 }
@@ -79,72 +57,12 @@
     background-color: white;
     border: 0;
     padding: 0;
-    margin: 0;
-    animation: slidein 500ms;
-    /* animation-delay: 10ms; */
-    overflow: hidden;
-}   
-
-.preview:active, .preview:hover {
-    background-color: rgb(218, 185, 238);
-    border: 0.5vh solid rgb(142, 36, 170);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-
-}
-
-@keyframes slidein {
-    from {
-        margin-top: 100%;
-        margin-left: 100%;
-        /* width: 300%; */
-        /* height: 300%; */
-    }
-
-    to {
-        margin-rigth: 0;
-        /* width: 100%; */
-        /* height: 100%; */
-    }
 }
 
 #avatar {
     font-size: 7vh;
     align-self: center;
     flex-basis: 20%;
-    animation-name: fall, rot;
-    animation-duration: 600ms,300ms;
-    animation-delay: 100ms,500ms;
-    /* animation-name: rot;
-    animation-duration: 8000ms;
-    animation-delay: 500ms; */
-    /* animation: rot 50s linear 0s infinite; */
-}
-
-#avatar:hover {
-    /* animation: rot 2s linear 0s infinite; */
-    color: gold;
-}
-@keyframes fall {
-    from {
-        margin-bottom: 500%;
-    }
-
-    to {
-        margin-bottom: 0;
-    }
-}
-
-@keyframes rot {
-    from {
-        transform: rotate(360deg);
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
 }
 
 .chat-info {
@@ -155,20 +73,12 @@
     align-self: stretch;
     flex-basis: 65%;
     border-bottom: 0.1vh solid grey;
-    /* margin-top: 1%; */
-    overflow: hidden;
-    justify-content: center;
+    margin-top: 1%;
 }
 
 .chat-last-msg {
     font-size: 2.5vh;
     color: grey;
-    /* width:10%; */
-    /* margin-bottom: 10vh; */
-    text-overflow: ellipsis;
-    max-width: 65vw;
-    overflow: hidden;
-    /* white-space: inherit; */
 }
 
 .chat-nums {

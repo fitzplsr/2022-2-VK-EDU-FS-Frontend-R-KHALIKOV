@@ -3,7 +3,6 @@
     height: 5%;
     width: 100%;
     background-color: white; 
-    
 }
 
 .form {
@@ -12,7 +11,6 @@
     flex-direction: row;
     width: 100%;  
     height: 100%;
-    
 }
 
 .form-input {
@@ -32,10 +30,6 @@
  .back {
     background-color: rgb(142, 36, 170);
     border: 0;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
  }
 
  #arrow_icon {
@@ -43,12 +37,6 @@
     font-size: 4vh;
     color: aliceblue;
     margin-left: 1%;
- }
-
- .back:hover,  .back:active {
-    background-color: rgb(145, 70, 165);
-    border-radius: 100%;
-    animation: pulse-animation 2s infinite
  }
 
  #account_icon {
@@ -94,9 +82,6 @@
 
 .chat {
     height: 85%;
-    /* background-color: rgb(218, 185, 238); */
-    /* border-bottom: 0.1vh solid black; */
-    
 }
 
 .chat-show {
@@ -105,8 +90,7 @@
     height: 100%;
     font-size: 3vh;
     overflow-y: auto;
-    
-    /* background-color: rgb(218, 185, 238); */
+    background-color: rgb(218, 185, 238);
 }
 
 .messageFromUser2 {
@@ -116,127 +100,73 @@
     align-self: flex-end;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 2.5vh;
-    border-bottom-left-radius: 2.5vh;
-    border-top-right-radius: 2.5vh;
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    margin-right: 1vh;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
     word-wrap: break-word;
-    background-color: rgb(218, 185, 238)
 }
 
 .messageFromUser2 > .time { 
-    margin-right: 1vh;
-    margin-bottom: -0.5vh;
-    margin-left: 0.25vh;
-    padding-left: 1.25vh;
+    margin-right: 10px;
+    margin-bottom: -10px;
+    margin-left: 5px;
+    padding-left: 25px;
 }
 
 .messageFromUser2 > .name {
     font-size: 2vh;
     align-self: flex-end;
-    padding-right: 2vh;
-    padding-left: 2vh;
-    margin-bottom: -1vh;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: -20px;
 }
 
 .messageFromUser1 {
-    background-color:  rgb(168, 215, 228);
     display: flex;
-    /* background-color: aliceblue; */
+    background-color: aliceblue;
     flex-direction: column-reverse;
     align-self: flex-start;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 2.5vh;
-    border-bottom-right-radius: 2.5vh;
-    border-top-right-radius: 2.5vh;
-    margin-top: 1vh;
-    margin-bottom: 0.5vh;
-    margin-left: 1vh;
-    /* animation: slidemesg1 400ms linear 0s; */
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
-@keyframes slidemesg11 {
-    from {
-        margin-left: 150%;
-        word-wrap: unset;
-        font-size: 0; 
-    }
-
-    to {
-        margin-left: 20px;
-    }
-    50% {
-        font-size: 0; 
-    }
-}
-
-@keyframes slidemesg2 {
-    from {
-        /* margin-right: 150%; */
-        opacity: 0;
-        font-size: 10vh;
-        margin-right: 50%;
-       }
-}
-@keyframes slidemesg1 {
-    from {
-        /* margin-right: 150%; */
-        opacity: 0;
-        font-size: 10vh;
-        margin-left: 50%;
-       }
-    }
 .messageFromUser1 > .time { 
-    padding-right: 1vh;
-    padding-bottom: 0.25vh;
-    /* animation: slidemesg1 400ms linear 0s; */
+    padding-right: 20px;
+    padding-bottom: 5px;
 }
 
 .messageFromUser1 > .name {
     font-size: 2vh;
     align-self: flex-start;
-    padding-right: 2vh;
-    padding-left: 2vh;
-    margin-bottom: -1vh;
-    /* animation: slidemesg1 400ms linear 0s; */
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: -20px;
 }
-/* .messageFromUser2:last-child, .messageFromUser2 > .name:last-child, .messageFromUser2 > .time:last-child {
-    animation: slidemesg2 40000ms linear 0s;
-} */
-/* .messageFromUser1:last-child, .messageFromUser1 > .name:last-child, .messageFromUser1 > .time:last-child {
-    animation: slidemesg1 400ms linear 0s;
-} */ 
-
-.messageFromUser1, .messageFromUser1 > .name, .messageFromUser1 > .time {
-    animation: slidemesg1 200ms linear 0s;
-}
-/* .messageFromUser2, .messageFromUser2 > .name, .messageFromUser2 > .time {
-    animation: slidemesg2 4000ms linear 0s;
-} */
-.messageFromUser2 {
-    animation: slidemesg2 200ms linear 0s;
-} 
 
 .text {
     max-width: 60vw;
     align-self: flex-start;
     text-justify: center;
-    padding-right: 2vh;
-    padding-left: 2vh;
-    padding-top: 1.25vh;
-    padding-bottom: 0,75vh;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     margin-bottom: -2%;
-    
 }
 
 .time {
     align-self: flex-end;
     justify-self: flex-start;
     font-size: 2vh;
-    padding-top: 0.5vh;
-    padding-bottom: 1vh;
-    
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
