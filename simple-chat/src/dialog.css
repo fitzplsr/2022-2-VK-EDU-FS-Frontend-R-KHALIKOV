@@ -31,6 +31,10 @@
     height: 80%;
  }
 
+ /* .user-line:has(> .back:hover)~#dialog {
+    filter: blur(8px);
+} */
+
  .back {
     background-color: rgb(142, 36, 170);
     border: 0;
@@ -185,18 +189,22 @@
         /* margin-right: 150%; */
         opacity: 0;
         /* font-size: calc(100%+10px); */
-        font-size: 25px;
-        margin-right: 50%;
-        margin-top: -5px;
+        /* font-size: 15px;  */
+        margin-right: 40%;
+        /* margin-right: calc(var(--variable-width)+ 20%); */
+        /* margin-top: 15px;  */
+        /* margin-bottom: 15px; */
+        /* margin-top: auto;
+        font-size: 0; */
        }
 }
 @keyframes slidemesg1 {
     from {
         /* margin-right: 150%; */
-        /* opacity: 0; */
-        font-size: 25px;
+        opacity: 0;
+        /* font-size: 25px; */
         margin-left: 50%;
-        margin-top: -5px;
+        /* margin-top: -5px; */
        }
     }
 .messageFromUser1 > .time { 
