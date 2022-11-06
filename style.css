@@ -100,8 +100,6 @@ body {
     width: 100%;
     background-color: white; 
     margin-top: auto;
-    /* position: absolute;
-    bottom: 0; */
 }
 
 .form {
@@ -110,7 +108,6 @@ body {
     flex-direction: row;
     width: 100%;  
     height: 100%;
-    
 }
 
 .form-input {
@@ -127,17 +124,9 @@ body {
     height: 80%;
  }
 
- /* .user-line:has(> .back:hover)~#dialog {
-    filter: blur(8px);
-} */
-
  .back {
     background-color: rgb(142, 36, 170);
     border: 0;
-    /* border-top-left-radius: 1.5vh;
-    border-bottom-left-radius: 1.5vh;
-    border-top-right-radius: 1.5vh;
-    border-bottom-right-radius: 1.5vh; */
  }
 
  #arrow_icon {
@@ -195,25 +184,15 @@ body {
 }
 
 .chat {
-    /* height: auto;
-    max-height: 80%; */
     height: calc(100% - 75px - 45px);
-    /* height: 85%; */
-    /* background-color: rgb(218, 185, 238); */
-    /* border-bottom: 0.1vh solid black; */
-    /* flex-grow: 0.5; */
-    
 }
 
 .chat-show {
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
     height: 100%;
     font-size: 25px;
     overflow-y: auto;
-    
-    /* background-color: rgb(218, 185, 238); */
 }
 
 .messageFromUser2 {
@@ -251,7 +230,6 @@ body {
 .messageFromUser1 {
     background-color:  rgb(168, 215, 228);
     display: flex;
-    /* background-color: aliceblue; */
     flex-direction: column-reverse;
     align-self: flex-start;
     width: auto;
@@ -262,51 +240,23 @@ body {
     margin-top: 8px;
     margin-bottom: 4px;
     margin-left: 8px;
-    /* animation: slidemesg1 400ms linear 0s; */
-}
-
-@keyframes slidemesg11 {
-    from {
-        margin-left: 150%;
-        word-wrap: unset;
-        font-size: 0; 
-    }
-
-    to {
-        margin-left: 20px;
-    }
-    50% {
-        font-size: 0; 
-    }
 }
 
 @keyframes slidemesg2 {
     from {
-        /* margin-right: 150%; */
         opacity: 0;
-        /* font-size: calc(100%+10px); */
-        /* font-size: 15px;  */
         margin-right: 40%;
-        /* margin-right: calc(var(--variable-width)+ 20%); */
-        /* margin-top: 15px;  */
-        /* margin-bottom: 15px; */
-        /* margin-top: auto;
-        font-size: 0; */
        }
 }
 @keyframes slidemesg1 {
     from {
-        /* margin-right: 150%; */
         opacity: 0;
-        /* font-size: 25px; */
         margin-left: 50%;
-        /* margin-top: -5px; */
        }
     }
 .messageFromUser1 > .time { 
     padding-right: 8px;
     padding-bottom: 2px;
-    /* animation: slidemesg1 400ms linear 0s; */
 }
 
 .messageFromUser1 > .name {
@@ -315,21 +265,12 @@ body {
     padding-right: 16px;
     padding-left: 16px;
     margin-bottom: -8px;
-    /* animation: slidemesg1 400ms linear 0s; */
 }
-/* .messageFromUser2:last-child, .messageFromUser2 > .name:last-child, .messageFromUser2 > .time:last-child {
-    animation: slidemesg2 40000ms linear 0s;
-} */
-/* .messageFromUser1:last-child, .messageFromUser1 > .name:last-child, .messageFromUser1 > .time:last-child {
-    animation: slidemesg1 400ms linear 0s;
-} */ 
 
 .messageFromUser1, .messageFromUser1 > .name, .messageFromUser1 > .time {
     animation: slidemesg1 200ms linear 0s;
 }
-/* .messageFromUser2, .messageFromUser2 > .name, .messageFromUser2 > .time {
-    animation: slidemesg2 4000ms linear 0s;
-} */
+
 .messageFromUser2, .messageFromUser2 > .name, .messageFromUser2 > .time {
     animation: slidemesg2 200ms linear 0s;
 } 
@@ -343,7 +284,6 @@ body {
     padding-top: 7px;
     padding-bottom: 6px;
     margin-bottom: -8px;
-    
 }
 
 .time {
@@ -352,7 +292,6 @@ body {
     font-size: 16px;
     padding-top: 4px;
     padding-bottom: 4px;
-    
 }
 .chats-head {
     display: flex;
