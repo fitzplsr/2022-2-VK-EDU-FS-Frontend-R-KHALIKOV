@@ -1,8 +1,9 @@
 .input-box {
     display: flex;
-    height: 5%;
+    height: 45px;
     width: 100%;
     background-color: white; 
+    margin-top: auto;
 }
 
 .form {
@@ -14,7 +15,7 @@
 }
 
 .form-input {
-    font-size: 3vh; 
+    font-size: 25px; 
     width: 85%;
     height: 100%;
     margin-left: 3%;
@@ -34,14 +35,20 @@
 
  #arrow_icon {
     flex-basis: 20%;
-    font-size: 4vh;
+    font-size: 34px;
     color: aliceblue;
     margin-left: 1%;
  }
 
+ .back:hover,  .back:active {
+    background-color: rgb(145, 70, 165);
+    border-radius: 100%;
+    animation: pulse-animation 2s infinite
+ }
+
  #account_icon {
     flex-basis: 3%;
-    font-size: 7.5vh;
+    font-size: 60px;
     color: aliceblue;
  }
 
@@ -51,46 +58,45 @@
 }
 
 .username {
-    font-size: 4vh;
+    font-size: 30px;
     color: aliceblue;
 }
 
 .status {
-    font-size: 2vh;
+    font-size: 16px;
     color: rgb(169, 150, 177);
 }
 
 #search_icon{
     flex-basis: 13%;
-    font-size: 4vh;
+    font-size: 33px;
     color: aliceblue;
 }
 
 #menu_icon {
     flex-basis: 5%;
     margin-right: 3%;
-    font-size: 4vh;
+    font-size: 33px;
     color: aliceblue;
 }
 
 #attachment_icon {
-    font-size: 4vh;
+    font-size: 33px;
     margin-right: 1.5%;
     transform: rotate(-90deg);
     color: rgb(143, 135, 146);
 }
 
 .chat {
-    height: 85%;
+    height: calc(100% - 75px - 45px);
 }
 
 .chat-show {
     display: flex;
     flex-direction: column;
     height: 100%;
-    font-size: 3vh;
+    font-size: 25px;
     overflow-y: auto;
-    background-color: rgb(218, 185, 238);
 }
 
 .messageFromUser2 {
@@ -100,73 +106,94 @@
     align-self: flex-end;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 8px;
     word-wrap: break-word;
+    background-color: rgb(218, 185, 238)
 }
 
 .messageFromUser2 > .time { 
-    margin-right: 10px;
-    margin-bottom: -10px;
-    margin-left: 5px;
-    padding-left: 25px;
+    margin-right: 2px;
+    margin-bottom: -4px;
+    margin-left: 2px;
+    padding-left: 10px;
 }
 
 .messageFromUser2 > .name {
-    font-size: 2vh;
+    font-size: 16px;
     align-self: flex-end;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-bottom: -20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: -8px;
 }
 
 .messageFromUser1 {
+    background-color:  rgb(168, 215, 228);
     display: flex;
-    background-color: aliceblue;
     flex-direction: column-reverse;
     align-self: flex-start;
     width: auto;
     max-width: 70%;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    margin-left: 8px;
 }
 
+@keyframes slidemesg2 {
+    from {
+        opacity: 0;
+        margin-right: 40%;
+       }
+}
+@keyframes slidemesg1 {
+    from {
+        opacity: 0;
+        margin-left: 50%;
+       }
+    }
 .messageFromUser1 > .time { 
-    padding-right: 20px;
-    padding-bottom: 5px;
+    padding-right: 8px;
+    padding-bottom: 2px;
 }
 
 .messageFromUser1 > .name {
-    font-size: 2vh;
+    font-size: 16px;
     align-self: flex-start;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-bottom: -20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: -8px;
 }
+
+.messageFromUser1, .messageFromUser1 > .name, .messageFromUser1 > .time {
+    animation: slidemesg1 200ms linear 0s;
+}
+
+.messageFromUser2, .messageFromUser2 > .name, .messageFromUser2 > .time {
+    animation: slidemesg2 200ms linear 0s;
+} 
 
 .text {
     max-width: 60vw;
     align-self: flex-start;
     text-justify: center;
-    padding-right: 40px;
-    padding-left: 40px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    margin-bottom: -2%;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+    margin-bottom: -8px;
 }
 
 .time {
     align-self: flex-end;
     justify-self: flex-start;
-    font-size: 2vh;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }

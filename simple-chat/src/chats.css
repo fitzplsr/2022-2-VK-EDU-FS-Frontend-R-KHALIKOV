@@ -7,14 +7,14 @@
 
 #burger {
     flex-basis: 10%;
-    font-size: 4vh;
+    font-size: 30px;
     color: aliceblue;
     margin-left: 4%;
 }
 
 .title {
     flex-basis: 85%;
-    font-size: 4vh;
+    font-size: 30px;
     color: aliceblue;
     margin-left: 3%;
 }
@@ -34,17 +34,31 @@
     right: 3%;
     background-color: rgb(255, 202, 44);
     color: rgb(116, 96, 41);
-    width: 6vh;
-    height: 6vh;
+    width: 48px;
+    height: 48px;
     border-radius: 100%;
-    padding: 16px;
+    padding: 4px;
 }
 
 #create-icon {
-    font-size: 4vh;
+    font-size: 33px;
+    animation: rot 5s linear 0s infinite;
 }
 
-.chats-list {
+.button:hover {
+    animation: pulse-animation 2s infinite
+}
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 16px rgba(0, 0, 0, 0);
+    }
+  }
+
+.previews {
     display: flex;
     flex-direction: column;
 }
@@ -52,17 +66,65 @@
 .preview {
     display: flex;
     flex-direction: row;
-    height: 8vh;
-    font-size: 3vh;
+    height: 64px;
+    font-size: 24px;
     background-color: white;
     border: 0;
     padding: 0;
+    margin: 0;
+    animation: slidein 500ms;
+    overflow: hidden;
+    border-bottom: 0.8px solid grey;
+    transition:  height 0.3s, padding 0.3s, border 0.1s; 
+}   
+
+.preview:active, .preview:hover {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 120px;
+    border-top: 0.8px solid grey;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-rigth: 0;
+    }
 }
 
 #avatar {
-    font-size: 7vh;
+    font-size: 60px;
     align-self: center;
     flex-basis: 20%;
+    animation-name: fall, rot;
+    animation-duration: 600ms,300ms;
+    animation-delay: 100ms,500ms;
+}
+
+#avatar:hover {
+    color: gold;
+}
+
+@keyframes fall {
+    from {
+        margin-bottom: 500%;
+    }
+
+    to {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 .chat-info {
@@ -72,13 +134,16 @@
     align-items: flex-start;
     align-self: stretch;
     flex-basis: 65%;
-    border-bottom: 0.1vh solid grey;
-    margin-top: 1%;
+    overflow: hidden;
+    justify-content: center;
 }
 
 .chat-last-msg {
-    font-size: 2.5vh;
+    font-size: 20px;
     color: grey;
+    text-overflow: ellipsis;
+    max-width: 65vw;
+    overflow: hidden;
 }
 
 .chat-nums {
@@ -86,16 +151,19 @@
     flex-direction: column;
     justify-content: center;
     align-self: stretch;
-    border-bottom: 0.1vh solid grey;
     flex-basis: 15%;
-    font-size: 2vh;
+    font-size: 17px;
+}
+
+.chat-id {
+    display: none;
 }
 
 .unread-msgs {
-    font-size: 2.5vh;
+    font-size: 22px;
 }
 
 #msgs {
-    font-size: 2.5vh;
+    font-size: 22px;
     color: rgb(142, 36, 170);
 }
